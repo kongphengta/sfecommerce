@@ -8,7 +8,7 @@
 
   ## Installation de Symfony7
   Avant d'installer Symfony7 j'utilise un outil de Symfony pour vérifier mon système s'il répond à toutes les exigences.  
-  Je lance la commande :
+  *Je lance la commande* :
   ```
   symfony check:requirements
   ```
