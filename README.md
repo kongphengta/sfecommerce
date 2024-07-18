@@ -12,6 +12,7 @@
   ```
   symfony check:requirements
   ```
+  ![Symfony Check](public/images/symfonyCheck.png)
   
 Je peux maintenant installer Symfony7, pour le faire je suis la documentation d'installation de Symfony.
 [Documentation](https://symfony.com/doc/current/setup.html)
