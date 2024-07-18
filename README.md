@@ -14,4 +14,4 @@
   ```
   
 Je peux maintenant installer Symfony7, pour le faire je suis la documentation d'installation de Symfony.
-![]('https://symfony.com/doc/current/setup.html')
+[](https://symfony.com/doc/current/setup.html)
