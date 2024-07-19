@@ -27,4 +27,6 @@ composer create-project symfony/skeleton:"7.1.*" sfecommerce
 cd sfecommerce
 composer require webapp
 ```
+Mon projet sfecommerce est créé.
+
 ![](public/images/projetSymfonycréé.png)
