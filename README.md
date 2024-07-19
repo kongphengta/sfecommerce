@@ -29,4 +29,3 @@ composer require webapp
 ```
 Mon projet sfecommerce est créé.
 
-![](public/images/projetSymfonycréé.png)
