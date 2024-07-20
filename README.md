@@ -3,6 +3,7 @@
 - Debian12
 - Symfony7
 - Syfony CLI
+- Symfony CLI
 - PHP 8.2
 - Composer 2.7
 - Framework Bootstrap
