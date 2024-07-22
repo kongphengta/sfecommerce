@@ -36,4 +36,17 @@ Je vais maintenant afficher la page de bienvenue de Symfony7, pour faire cela je
 
 ![](public/images/BienvenueSymfony7.png)
 
+La page de Bienvenue de Symfony7 est affichée, je voulais maintenant créer ma page d'accueil de mon site, j'utilise maker-bundle pour créer le contrôleur associé à ma page.
+
+```
+php bin/console make:controller HomeController
+
+```
+![](public/images/HomeController.png)
+
+une fois que la page home est créée j'actualise la page.
+
+![](public/images/premièrePageParDéfaut.png)
+
+
 
