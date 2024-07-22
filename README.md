@@ -32,3 +32,8 @@ Mon projet sfecommerce est créé.
 
 ![](public/images/projetSymfonycréé.png)
 
+Je vais maintenant afficher la page de bienvenue de Symfony7, pour faire cela je lance la commande "symfony server:start".
+
+
+
+
