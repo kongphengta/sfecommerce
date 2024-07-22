@@ -34,6 +34,6 @@ Mon projet sfecommerce est créé.
 
 Je vais maintenant afficher la page de bienvenue de Symfony7, pour faire cela je lance la commande "symfony server:start".
 
-
+![](public/images/BienvenueSymfony7.png)
 
 
