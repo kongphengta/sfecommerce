@@ -1,1 +1,2 @@
-# mon site de ecommerce Symfony7
+# Site de ecommerce Symfony7
+ ## Environnement de travail
