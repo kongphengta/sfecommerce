@@ -1,6 +1,7 @@
 <?php
 namespace App\Twig;
 
+use App\Classe\Cart;
 use App\Repository\CategoryRepository;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
@@ -9,9 +10,11 @@ use Twig\TwigFilter;
 class AppExtensions extends AbstractExtension implements GlobalsInterface
 {
     private $categoeyRepository;
-    public function __construct(CategoryRepository $categoeyRepository)
+    private $cart;
+    public function __construct(CategoryRepository $categoeyRepository, Cart $cart)
     {
         $this->categoeyRepository= $categoeyRepository;
+        $this->cart = $cart;
     }
     public function getFilters()
     {
@@ -26,7 +29,8 @@ class AppExtensions extends AbstractExtension implements GlobalsInterface
     public function getGlobals(): array
     {
         return [
-            'allCategories' => $this->categoeyRepository->findAll()
+            'allCategories' => $this->categoeyRepository->findAll(),
+            'fullCartQuantity' => $this->cart->fullQuantity()
         ];
     }
 }

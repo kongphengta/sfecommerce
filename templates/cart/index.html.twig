@@ -4,14 +4,45 @@
 
 {% block body %}
 <div class="container mt-5">
-    <h1>Mon panier</h1>
+        <h1>Mon panier</h1>
     <div class="row">
-        <div class="col-md-8 mb-5">
-        Liste de produits.
-        {{ dump(cart) }}
+
+        <div class="col-md-8 mb-5">      
+            {% for product in cart %}
+                <div class="row mt-2">
+                    <div class="col-md-2">
+                    <img src="/uploads/{{product.object.illustration}}" class="img-fluid" alt="{{product.object.name}}">
+                    </div>
+                    <div class="col-md-6">
+                    <strong>{{ product.object.name }}</strong>
+                    <span class="d-block small">Prix unitaire : {{ product.object.pricewt | price }}
+                    </div>
+                    <div class="col-md-2">
+                    <a href="{{ path('app_cart_decrease', { id : product.object.id } ) }}" class="me-2"> - </a> <span class="badge text-bg-secondary"> x {{ product.qty }}</span><a href="{{ path('app_cart_add', { id : product.object.id } ) }}" class="ms-2"> + </a>
+                    </div>
+                    <div class="col-md-2">
+                    <strong>{{ (product.qty * product.object.pricewt) | price }}</strong>
+                    </div>
+                </div>
+            {% endfor %} 
+            <a href="{{ path('app_cart_remove')}}" class="small d-block mt-3">Vider le panier</a>
         </div>
+
         <div class="col-md-4">
-        Récap de mon panier.
+                <div class="bg-light">
+                    <div class="d-flex justify-content-between">
+                        <span class="fw-bold">Total produit</span>
+                        <span>{{ fullCartQuantity }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <span class="fw-bold">Prix total TTC</span>
+                        <span>{{ totalWt | price }}</span>
+                    </div>
+                    <div>
+                        <a href="" class="btn btn-success mt-3">Commander</a>
+                    </div>
+                </div>
+     
         </div>
 
     </div>
