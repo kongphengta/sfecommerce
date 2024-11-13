@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+     <div class="container my-5">
+
+          <div class="row">
+               <div class="col-md-4">{% include 'account/_menu.html.twig' %} </div> 
+                 
+               <div class="col-md-8">
+                    <div class="d-flex justify-content-between">
+                         <h1 class="mb-4">Mes adresses</h1> 
+                         <a href="{{ path('app_account_address_form') }}">Ajouter une adresse</a><br />
+                    </div>
+
+                    {% if app.user.addresses|length == 0 %}
+                         <p>Vous n'avez pas encore enregitré l'adresse sur la boutique ecommerce.</p>
+                         {% else %}
+                              <div class="row">       
+                                   {% for address in app.user.addresses %}
+                                        <div class="col-md-5">
+                                             <div class="bg-light p-2">
+                                                  <strong>{{ address.firstname }} {{ address.lastname }}</strong><br>
+                                                  {{ address.address}}<br>
+                                                  {{ address.postal}} {{ address.city}}<br>
+                                                  {{ address.country}} <br> {{ address.phone}} <br>
+                                                  <a href="{{ path('app_account_address_form', { id : address.id } )}}" class="small text-secondary">Editer</a><br>
+                                                  <a href="{{ path('app_account_addresses_delete', { id : address.id } )}}" class="small text-secondary">Supprimer</a>
+                                             </div>
+                                        </div>
+                                   {% endfor %}
+                              </div>    
+                    {% endif %}                         
+               </div>       
+          </div>
+     </div>
+{% endblock %}

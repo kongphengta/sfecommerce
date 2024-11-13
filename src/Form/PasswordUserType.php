@@ -47,7 +47,10 @@ class PasswordUserType extends AbstractType
                 'mapped' => false,
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Mettre à jour mon mot de passe'
+                'label' => 'Mettre à jour mon mot de passe',
+                'attr' => [
+                    'class' => 'btn btn-success'
+                ]
             ])
 
             ->addEventListener(FormEvents::SUBMIT, function(FormEvent $event) {
