@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container mt-5">
+        <h1>Récapitulatif de ma commande</h1>
+    <div class="row">
+
+        <div class="col-md-8 mb-5">      
+            Contenu de mon panier<br>
+            <strong>Votre adresse de livraison :</strong><br>
+            {{ choices.addresses.firstname}} {{ choices.addresses.lastname}} <br/>
+            {{ choices.addresses.address}}<br/>
+            {{ choices.addresses.postal}}<br/>
+            {{ choices.addresses.city}}<br/>
+            {{ choices.addresses.country}}<br/>
+                <hr>
+            <strong>Votre transporteur :</strong><br/>
+            {{ choices.carriers.name}}<br/>
+            {{ choices.carriers.description}}<br/>
+           
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="bg-light">
+                <div class="d-flex justify-content-between">
+                    <span class="fw-bold">Total produit</span>
+               
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <span class="fw-bold">Total transporteur</span>
+               
+                </div>
+                 <div class="d-flex justify-content-between mt-3">
+                    <span class="fw-bold">Total commande</span>
+               
+                </div>
+                <div>
+                    <a href="{{ path('app_order') }}" class="btn btn-success mt-3">Commander</a>
+                </div> 
+            </div>
+     
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

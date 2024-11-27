@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class Cart
 {
 
-    public function __construct(private RequestStack $requestStack,)
+    public function __construct(private RequestStack $requestStack)
     {
         
     }
@@ -62,7 +62,14 @@ class Cart
         $cart = $this->getCart();
         $quantity = 0;
 
-        if (!isset($cart))
+        if(!isset($cart)) {
+            return $quantity;
+        }
+
+        foreach($cart as $product)
+        {
+            $quantity = $quantity + $product['qty'];
+        }
         return $quantity;
     }
     /**
@@ -71,10 +78,18 @@ class Cart
      */
     public function getTotalWt()
     {
+
         $cart = $this->getCart();
         $price = 0;
 
-        if (!isset($cart))
+        if(!isset($cart)) {
+        return $price;
+        }
+
+        foreach($cart as $product)
+        {
+            $price = $price + ($product['object']->getPriceWt() * $product['qty']);
+        }
         return $price;
     }
      /**

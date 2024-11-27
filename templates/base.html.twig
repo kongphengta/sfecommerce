@@ -38,11 +38,11 @@
                 </ul>
 
                 <div class="speed-menu">
-                {% if app.user %}
-                    <a href="{{ path('app_account')}}"><i data-feather="user"></i>{{ app.user.firstname}}</a>
-                {% else %}
-                    <a href="{{ path('app_login')}}"><i data-feather="user"></i></a>
-                 {% endif %}
+                    {% if app.user %}
+                        <a href="{{ path('app_account')}}"><i data-feather="user"></i>{{ app.user.firstname}}</a>
+                    {% else %}
+                        <a href="{{ path('app_login')}}"><i data-feather="user"></i></a>
+                    {% endif %}
 
                     <a href="{{ path('app_cart')}}">
                     <i data-feather="shopping-cart"></i>
@@ -71,8 +71,8 @@
     {% block body %}{% endblock %}
 
     <!-- FOOTER -->
-    <footer class="container">
-        <p>&copy; 2024 La Boutique ecommerce </p>
+    <footer class="container mt-5">
+        <p>&copy; Konvix - 2024 - La Boutique ecommerce </p>
     </footer>
 </main>
 

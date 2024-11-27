@@ -2,6 +2,7 @@
 
 namespace App\Controller\Account;
 
+use App\Classe\Cart;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
@@ -44,7 +45,7 @@ class AddressController extends AbstractController
     }
 
     #[Route('/compte/adresse/ajouter/{id}', name: 'app_account_address_form', defaults : ['id' => null])]
-    public function form(Request $request, $id, AddressRepository $addressRepository): Response
+    public function form(Request $request, $id, AddressRepository $addressRepository, Cart $cart): Response
     {
         if($id)
         {
@@ -70,7 +71,11 @@ class AddressController extends AbstractController
                 'success',
                 "Votre adresse est correctement sauvegardée."
             );
-            return $this->redirectToRoute('app_account_addresses');
+
+            if($cart->fullQuantity() > 0) {
+                return $this->redirectToRoute('app_order');
+            }
+           
         }
 
         return $this->render('account/address/form.html.twig', [

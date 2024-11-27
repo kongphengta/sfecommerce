@@ -8,7 +8,7 @@
             <img src="/uploads/{{ product.illustration }}" class="img-fluid" alt="{{ product.name }}">
         </div>
         <div class="col-md-6">
-        <small><i><a href="{{ path('app_category', { slug : product.category.slug } ) }}"> {{ product.category.name}}</a> > {{ product.name}}</i></small>
+            <small><i><a href="{{ path('app_category', { slug : product.category.slug } ) }}"> {{ product.category.name}}</a> > {{ product.name}}</i></small>
             <h1>{{ product.name }}</h1>
              <span class="d-block mb-3"> {{ product.pricewt | price }}</span> 
             {{ product.description | raw }}
